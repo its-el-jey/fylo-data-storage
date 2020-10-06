@@ -152,7 +152,7 @@ body {
 }
 
 /*--media queries--*/
-@media screen and (max-width: 61em) {
+@media screen and (max-width: 61.938em) {
   body {
     background-image: url(/images/bg-mobile.png);
     background-position: bottom;
@@ -162,17 +162,15 @@ body {
   }
 }
 
-@media screen and (max-width: 90em) {
+/*--device screen with 992px above--*/
+@media screen and (min-width: 62em) {
   body {
     background-image: url(/images/bg-desktop.png);
     background-position: bottom;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-size: contain;
   }
-}
-
-/*--device screen with 992px above--*/
-@media screen and (min-width: 62em) {
   .container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -195,8 +193,8 @@ body {
     height: -moz-min-content;
     height: min-content;
     margin-left: 2rem;
-    -webkit-transform: translateY(0.6rem);
-            transform: translateY(0.6rem);
+    -webkit-transform: translateY(0.8rem);
+            transform: translateY(0.8rem);
   }
   .content .progress-bar::after {
     -webkit-transform: translateX(22.5rem);
