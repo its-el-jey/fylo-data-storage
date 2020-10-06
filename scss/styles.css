@@ -9,9 +9,7 @@
 body {
   font-family: 'Raleway', sans-serif;
   margin: 3rem;
-  height: 100vh;
-  background: url(/images/bg-mobile.png) no-repeat;
-  background-size: cover;
+  background-color: #0c122c;
 }
 
 .container {
@@ -154,27 +152,57 @@ body {
 }
 
 /*--media queries--*/
-/*--device scren with 992px above--*/
+@media screen and (max-width: 61em) {
+  body {
+    background-image: url(/images/bg-mobile.png);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+}
+
+@media screen and (max-width: 90em) {
+  body {
+    background-image: url(/images/bg-desktop.png);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+}
+
+/*--device screen with 992px above--*/
 @media screen and (min-width: 62em) {
   .container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
-  .container .content {
+  .header {
+    height: -webkit-min-content;
+    height: -moz-min-content;
+    height: min-content;
+  }
+  .content {
     width: 40em;
     height: -webkit-min-content;
     height: -moz-min-content;
     height: min-content;
     margin-left: 2rem;
-    -webkit-transform: translateY(3.3rem);
-            transform: translateY(3.3rem);
+    -webkit-transform: translateY(0.6rem);
+            transform: translateY(0.6rem);
   }
-  .container .content .progress-bar::after {
+  .content .progress-bar::after {
     -webkit-transform: translateX(22.5rem);
             transform: translateX(22.5rem);
   }
-  .container .content .overlap {
+  .content .overlap {
     position: absolute;
     top: -20%;
     right: 9%;
@@ -185,7 +213,7 @@ body {
     height: min-content;
     border-radius: 0.8rem 0.8rem 0 0.8rem;
   }
-  .container .content .overlap::after {
+  .content .overlap::after {
     content: '';
     position: absolute;
     bottom: -1.9rem;
@@ -196,7 +224,7 @@ body {
     -webkit-clip-path: polygon(1% 0, 100% 100%, 100% 0);
             clip-path: polygon(1% 0, 100% 100%, 100% 0);
   }
-  .container .attribution {
+  .attribution {
     position: absolute;
     bottom: 0;
   }
