@@ -48,6 +48,7 @@ body {
 .content {
     color: color(--pale-blue);
     font-size: 14px;
+    position: relative;
 
     .title {
         text-align: center;
@@ -87,36 +88,27 @@ body {
         display: flex;
         justify-content: space-between;
     }
-}
-
-/*--remaining space--*/ 
-.overlap-div {
-    display: flex;
-    justify-content: center;
-    transform: translateY(-2rem);
-
-    .remaining {
-        background-color: color(--pale-blue);
-        color: color(--very-dark-blue);
-        font-size: 14px;
-        width: 50%;
-        padding: 0.8rem;
+    .overlap {
         display: flex;
         justify-content: center;
+        align-items: center;
+        background-color: color(--pale-blue);       
         border-radius: 0.8rem;
-        
-        .space {
-            display: flex;
-            align-items: center;  
-            
-            h1 {
-                font-size: 2.5rem;
-            }
-            p {
-                color: color(--grayish-blue);
-                margin-left: 0.5rem;
-                letter-spacing: 0.1rem;
-            }
+        width: 50%;
+        padding: 1rem;
+        position: absolute;
+        bottom: -3rem;
+        right: 6rem ;
+        h1 {
+            margin-right: 0.5rem;
+            font-size: 2.5rem;
+            color: color(--very-dark-blue);
+        }
+        p {
+            color: color(--grayish-blue);
+            letter-spacing: 0.1rem;
+            font-size: 13px;
+            font-weight: 700;
         }
     }
 }
@@ -125,9 +117,56 @@ body {
 .attribution { 
     font-size: 11px; 
     text-align: center; 
-
+    transform: translateY(5rem);
     a {
         color: hsl(0, 0%, 56%);
         text-decoration: none;
+    }
+}
+
+/*--media queries--*/ 
+
+/*--device scren with 992px above--*/ 
+@media screen and (min-width: 62em) {
+    .container {
+    display: flex;
+
+    .content {
+        width: 40em;
+        height: min-content;
+        margin-left: 2rem;
+        transform: translateY(3.3rem);
+
+        .progress-bar {
+            &::after {
+                transform: translateX(22.5rem);
+            }
+        }
+        .overlap {
+            position: absolute;
+            top: -20%;
+            right: 9%;
+            width: 40%;
+            padding: 0.5rem;
+            height: min-content;
+            border-radius: 0.8rem 0.8rem 0 0.8rem;
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -1.9rem;
+                right: 0;
+                width: 2rem;
+                height: 2rem;
+                background-color: color(--pale-blue);
+                clip-path: polygon(1% 0, 100% 100%, 100% 0);
+                }
+            }
+        }
+
+        .attribution {
+            position: absolute;
+            bottom: 0;
+        }
     }
 }
